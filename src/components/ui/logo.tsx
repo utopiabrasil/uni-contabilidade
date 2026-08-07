@@ -1,0 +1,71 @@
+import { cn } from "@/lib/utils";
+
+/**
+ * Ícone da marca (donut tricolor) reproduzido a partir de
+ * "Logo editada/Resizable Vector Files/Original.svg".
+ */
+export function UniMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="20.5 20 159 160"
+      className={cn("h-9 w-9", className)}
+      aria-hidden="true"
+    >
+      <path
+        fill="#F39A4A"
+        d="M100 58.8c7.8 0 15.1 2.1 21.3 5.9 17.7.3 34.9 1.2 51.1 2.5-4.1-9.1-9.9-17.4-17-24.4C141.1 28.7 121.6 20 100 20c-21.7 0-41.4 8.8-55.8 23-7.1 7-12.8 15.3-16.8 24.5 16.2-1.4 33.3-2.3 51.1-2.8 6.5-3.9 13.9-5.9 21.5-5.9z"
+      />
+      <path
+        fill="#5BA8E9"
+        d="M58.1 101c0-15.4 8.2-28.8 20.4-36.2-17.8.5-34.9 1.4-51.1 2.8-3.4 7.5-5.5 15.5-6.4 23.8-.3 2.9-.5 5.8-.5 8.6 0 5 .5 9.8 1.4 14.5 12.5-1.1 25.1-2 37.7-2.6-1-3.5-1.5-7.2-1.5-10.9z"
+      />
+      <path
+        fill="#5BA8E9"
+        d="M178.9 90.9c-.9-8.2-3.1-16.2-6.5-23.8-16.2-1.3-33.3-2.1-51.1-2.5 12.3 7.3 20.6 20.9 20.6 36.3 0 3.7-.5 7.3-1.4 10.8 13 .5 25.6 1.3 37.7 2.3.8-4.6 1.3-9.2 1.3-14.1 0-3-.2-6-.6-9z"
+      />
+      <path
+        fill="#494B4D"
+        className="[.logo-on-dark_&]:fill-white"
+        d="M100 143.1c-19.4 0-35.7-13.2-40.5-31.2-12.6.6-25.1 1.4-37.7 2.6 1.4 7.9 4 15.5 7.7 22.6 4.3 8.3 10.1 15.8 17 22 14.2 13 32.9 20.9 53.5 20.9 20.8 0 39.6-8.1 53.7-21.2 6.9-6.3 12.6-13.8 16.9-22.1 3.7-7.1 6.2-14.7 7.6-22.6-12.5-1.1-25.1-1.8-37.7-2.3-4.7 18-21 31.3-40.5 31.3z"
+      />
+    </svg>
+  );
+}
+
+export function UniLogo({
+  className,
+  onDark = false,
+}: {
+  className?: string;
+  onDark?: boolean;
+}) {
+  return (
+    <span
+      className={cn(
+        "flex items-center gap-2.5",
+        onDark && "logo-on-dark",
+        className
+      )}
+    >
+      <UniMark className="h-9 w-9 shrink-0" />
+      <span className="flex flex-col leading-none">
+        <span
+          className={cn(
+            "font-display text-[1.4rem] font-bold tracking-tight",
+            onDark ? "text-white" : "text-brand-ink-strong"
+          )}
+        >
+          uni
+        </span>
+        <span
+          className={cn(
+            "font-display text-[0.55rem] font-semibold uppercase tracking-[0.14em]",
+            onDark ? "text-white/70" : "text-brand-ink/70"
+          )}
+        >
+          Contabilidade Digital
+        </span>
+      </span>
+    </span>
+  );
+}
